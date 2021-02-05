@@ -9,7 +9,7 @@ class Key implements KeySpec {
   }
 
   equals(sample: KeySpec): boolean {
-    return sample.toNumber() == this.numericalKey;
+    return sample.toNumber() === this.numericalKey;
   }
 
   toNumber(): number {

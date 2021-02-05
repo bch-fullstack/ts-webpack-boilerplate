@@ -5,7 +5,7 @@ class Database {
 
   bankAccounts: BankAccountSpec[] = [];
 
-  constructor() {}
+  // constructor() {}
 
   insert(account: BankAccountSpec): boolean {
     const foundDuplicate = this.find(account.getKey());

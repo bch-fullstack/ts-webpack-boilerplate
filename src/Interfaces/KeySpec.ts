@@ -6,9 +6,8 @@ interface KeySpec {
 
   equals: (sample: KeySpec) => boolean,
 
-  // Return num value of the current key
+  // Returns numeric value of the current key
   toNumber: () => number
-
 }
 
 export default KeySpec;
