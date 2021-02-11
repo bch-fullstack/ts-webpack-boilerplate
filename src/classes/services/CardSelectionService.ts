@@ -4,6 +4,10 @@ export class CardSelectionService {
     }
 
     decide() {
-        return Boolean(this.getOneOrZero);
+        if (this.getOneOrZero() === 1) {
+             return true
+        } else {
+            return false
+         }
     } 
 }

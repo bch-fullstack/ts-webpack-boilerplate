@@ -1,5 +1,7 @@
 import { RealPlayer } from './classes/RealPlayer';
 import { BotPlayer } from "./classes/BotPlayer";
+import { AbstractPlayer } from './classes/AbstractPlayer';
+import {CardDealer} from './classes/CardDealer'
 
 
 const players = [
@@ -11,18 +13,19 @@ const players = [
 const dealer = new CardDealer(52);
 
 players.forEach(player => {
-    let counter = 3;
+    let counter = 2;
     while (Boolean(counter--)) {
         dealer.dealTo(player);
     }
 })
 
-players.forEach(player => {
-    while(player.requestCard()) {
+players.forEach((player:AbstractPlayer) => {
+    if(player.requestCard()) {
         dealer.dealTo(player);
     }
 })
 
-players.forEach(player => {
-    console.log(player.reviewCards())
+players.forEach((player:AbstractPlayer) => {
+    console.log('reviewing cards', player.reviewCards())
 })
+
