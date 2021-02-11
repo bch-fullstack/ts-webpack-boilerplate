@@ -3,7 +3,7 @@ import { Card } from "./Card";
 
 export class CardDealer {
     private deck: Card[] = [];
-
+    
     constructor(counter: Number){
         let i = 0;
         while(i < counter) {
@@ -11,6 +11,7 @@ export class CardDealer {
             i++;
         }
     }
+
 
     dealTo(player: AbstractPlayer) {
         const card = this.deck.shift();
