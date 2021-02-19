@@ -19,6 +19,7 @@ players.forEach(player => {
 
 players.forEach(player => {
     while(player.requestCard()) {
+        console.log('test');
         dealer.dealTo(player);
     }
 })
