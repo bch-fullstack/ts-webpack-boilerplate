@@ -2,8 +2,8 @@ import { PlayerBehavior } from "../interfaces/PlayerBehavior";
 import { Card } from "./Card";
 
 export abstract class AbstractPlayer implements PlayerBehavior {
-    private holdings: Card[] = [];
-    private max: number;
+    protected holdings: Card[] = [];
+    private max: number; // maxmimum number of cards that can be held
 
     abstract requestCard(): boolean;
 
@@ -19,5 +19,15 @@ export abstract class AbstractPlayer implements PlayerBehavior {
 
     reviewCards(): Card[] {
         return this.holdings;
+    }
+
+    getSum(): number {
+        return this.holdings
+            .map((card: Card) => card.name)
+            .reduce((acc, next) => acc + next);
+    }
+
+    announceCards(): void {
+        console.log(`My result is ${this.getSum()}`, this.reviewCards())
     }
 }
